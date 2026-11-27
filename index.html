@@ -84,12 +84,12 @@ a.ts-btn { text-decoration: none; width: max-content; max-width: 100%; text-alig
 <footer class="ts-foot">© تاجو · استوديو طوفان</footer></div></div>
 <script>function setLang(l){document.getElementById('en').style.display=l==='en'?'':'none';document.getElementById('ar').style.display=l==='ar'?'':'none';window.scrollTo(0,0)}</script><script>var D=window.D;document.querySelectorAll("img[data-d]").forEach(function(e){e.src=D[e.dataset.d]});</script><script>document.querySelectorAll("img[data-pl]").forEach(function(e){e.src=window.PL});</script><script>document.addEventListener("click",function(e){var h=e.target.closest(".ts-head");if(!h)return;var b=e.target.closest(".ts-burger");if(b){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o);return}var a=e.target.closest(".ts-navl");if(a){var id=a.getAttribute("href").slice(1);var t=[].slice.call(document.querySelectorAll("[id="+id+"]")).filter(function(x){return x.offsetParent})[0];if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"})}}if(e.target.closest(".ts-navl,.ts-lang"))document.querySelectorAll(".ts-head").forEach(function(x){x.classList.remove("open")})});</script><script>
 var WORKS=[
-{id:"geyAFad6BOk",t:"الجديد شديد مع موسي",ce:"Arrangement only",ca:"توزيع فقط",d:"2025-12-11",m:1},
-{id:"TkhcPIyLJFE",t:"مجعبد مع موسي",ce:"Recording at Toufan Studio",ca:"تسجيل في طوفان ستوديو",d:"2025-11-19",m:1},
+{id:"geyAFad6BOk",t:"الجديد شديد مع موسي",ce:"Arrangement only",ca:"توزيع فقط",d:"2025-12-11",m:1,mf:1},
+{id:"TkhcPIyLJFE",t:"مجعبد مع موسي",ce:"Recording at Toufan Studio",ca:"تسجيل في طوفان ستوديو",d:"2025-11-19",m:1,mf:1},
 {id:"Ix26BKq5xHc",t:"اغيب مع البصيلي وموسي سام",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2025-05-12",m:1},
 {id:"4_fUPXaNWvo",t:"اغيب اغيب مع موسي وعمر الكروان والبصيلي",ce:"Arrangement, recording, mix & master",ca:"توزيع وتسجيل وميكس وماستر",d:"2025-05-07",m:1,pf:2},
 {id:"HBd1CzY-FbE",t:"النجم الساحلي مع موسي سام",ce:"Arrangement, recording, mix & master",ca:"توزيع وتسجيل وميكس وماستر",d:"2023-03-19",m:1},
-{id:"wqF8gJ9O9RI",t:"مواويل مع موسي سام",ce:"Recording, mix & master",ca:"تسجيل وميكس وماستر",d:"2022-12-23",m:1},
+{id:"wqF8gJ9O9RI",t:"مواويل مع موسي سام",ce:"Recording, mix & master",ca:"تسجيل وميكس وماستر",d:"2022-12-23",m:1,pf:3},
 {id:"VjvS09YbRSU",t:"اصحالي يا برنس مع موسي سام",ce:"Arrangement, recording, mix & master",ca:"توزيع وتسجيل وميكس وماستر",d:"2022-08-09",m:1,pf:1},
 {id:"YmHIlquhUiA",t:"مع ١٠٠٠ سلامة مع محمد البصيلي",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2026-01-24"},
 {id:"GnWadP4m8mA",t:"أنا مين مع كريم كريستيانو",ce:"Concept, arrangement, mix & master",ca:"فكرة وتوزيع وميكس وماستر",d:"2025-09-12"},
@@ -134,7 +134,7 @@ var t=(s.channel_views_base||0)+(s.external_total||0);
 var f=t>=1e6?((t/1e6).toFixed(1).replace(/\.0$/,""))+"M+":t>=1e3?Math.round(t/1e3)+"K+":String(t);
 document.querySelectorAll(".ts-ytviews").forEach(function(b){b.textContent=f});
 }).catch(function(){});
-var wsorted=WORKS.slice().sort(function(a,b){var pa=a.pf||99,pb=b.pf||99;if(pa!==pb)return pa-pb;if((a.m?1:0)!==(b.m?1:0))return a.m?-1:1;return a.d<b.d?1:-1});
+var wsorted=WORKS.slice().sort(function(a,b){var pa=a.pf||99,pb=b.pf||99;if(pa!==pb)return pa-pb;var ma=a.m?1:0,mb=b.m?1:0;if(ma!==mb)return mb-ma;var fa=a.mf?1:0,fb=b.mf?1:0;if(fa!==fb)return fa-fb;return a.d<b.d?1:-1});
 [{G:"tsGridEn",R:"tsWorkRelEn",c:"ce"},{G:"tsGridAr",R:"tsWorkRelAr",c:"ca"}].forEach(function(cfg){var g=document.getElementById(cfg.G),l=document.getElementById(cfg.R);if(!g||!l)return;var gh="",lh="";wsorted.forEach(function(r,i){var cr=r[cfg.c]||null;if(i<5)gh+=cardHTML(r,r.t,cr);else lh+=rowHTML(r,r.t,cr)});g.innerHTML=gh;l.innerHTML=lh});
 var PIN=[{id:"sdjWUxFvA-Y",t:"مجرودة خاينين مع محمد البصيلي",d:""}];
 PIN.forEach(function(r){var a=document.getElementById("tsWorkRelEn");if(a)a.insertAdjacentHTML("beforeend",rowHTML(r,r.t,null));var b=document.getElementById("tsWorkRelAr");if(b)b.insertAdjacentHTML("beforeend",rowHTML(r,r.t,null));});
