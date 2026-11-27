@@ -78,9 +78,9 @@
 .ts-names { display: flex; flex-wrap: wrap; gap: 10px; }
 .ts-name { border: 1px solid #3a3a3a; border-radius: 999px; padding: 8px 16px; color: #eee; background: #1a1a1a; white-space: nowrap; }
 .ts-name:hover { border-color: #FED219; color: #FED219; }
-.ts-studioimg { width: 100%; border-radius: 20px; border: 2px solid #FED219; display: block; }
+.ts-studioimg { width: 100%; aspect-ratio: 1; height: auto; object-fit: cover; border-radius: 20px; border: 2px solid #FED219; display: block; }
 .ts-about { display: grid; gap: 18px; align-items: center; }
-.ts-portrait { width: 100%; max-width: 360px; aspect-ratio: 1; object-fit: cover; object-position: 38% 50%; border-radius: 20px; border: 2px solid #FED219; display: block; margin: 0 auto; }
+.ts-portrait { width: 100%; max-width: 360px; aspect-ratio: 1; height: auto; object-fit: cover; object-position: 38% 50%; border-radius: 20px; border: 2px solid #FED219; display: block; margin: 0 auto; }
 .ts-about p { margin: 0; }
 @media (min-width: 700px) { .ts-about { grid-template-columns: 300px 1fr; gap: 32px; } .ts-portrait { max-width: 300px; } }
 a.ts-btn { text-decoration: none; width: max-content; max-width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; }
