@@ -170,8 +170,8 @@ document.querySelectorAll(".ts-ytviews").forEach(function(b){b.textContent=f});
 var wsorted=WORKS.slice().sort(function(a,b){var pa=a.pf||99,pb=b.pf||99;if(pa!==pb)return pa-pb;var ta=a.tl||0,tb=b.tl||0;if((ta>0)!==(tb>0))return ta>0?1:-1;if(ta!==tb)return ta-tb;var ma=a.m?1:0,mb=b.m?1:0;if(ma!==mb)return mb-ma;var fa=a.mf?1:0,fb=b.mf?1:0;if(fa!==fb)return fa-fb;return a.d<b.d?1:-1});
 var WCFG={en:{G:"tsGridEn",R:"tsWorkRelEn",c:"ce"},ar:{G:"tsGridAr",R:"tsWorkRelAr",c:"ca"}};
 window.renderWorks=function(l){var cfg=WCFG[l];if(!cfg)return;var g=document.getElementById(cfg.G),w=document.getElementById(cfg.R);if(!g||!w||g.dataset.done)return;var gh="",lh="";wsorted.forEach(function(r,i){var cr=r[cfg.c]||null;if(i<5)gh+=cardHTML(r,r.t,cr);else lh+=rowHTML(r,r.t,cr)});g.innerHTML=gh;w.innerHTML=lh;PIN.forEach(function(r){w.insertAdjacentHTML("beforeend",rowHTML(r,r.t,null))});g.dataset.done="1"}
-renderWorks("en");
 var PIN=[{id:"sdjWUxFvA-Y",t:"مجرودة خاينين مع محمد البصيلي",d:""}];
+renderWorks("en");
 })();
 </script>
 </body></html>
