@@ -100,13 +100,12 @@ var WORKS=[
 {id:"KaSbYRlroDc",t:"عيل وشه نحس تايجر وفرامل",d:"2021-03-12"},
 {id:"11m_lcPRQlo",t:"واحدة واحدة مع البصيلي",d:"2025-09-14"},
 {id:"pLjuiQqDRKE",t:"احج ابراهيم العرجاني مع باسل الدباري",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2023-06-20"},
-{id:"8nIj2rtAbnM",t:"مجرودة تاريخنا معروف مع البصيلي",d:"2023-03-10"},
-{id:"NM1cDktND9A",t:"محارب مع محمد البصيلي",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2022-09-20"},
-{id:"uf4d9rophBo",t:"حنا العز حنا الفخر مع البصيلي",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2022-06-11"},
+{id:"8nIj2rtAbnM",t:"مجرودة تاريخنا معروف مع البصيلي",d:"2023-03-10",tl:4},
+{id:"uf4d9rophBo",t:"حنا العز حنا الفخر مع البصيلي",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2022-06-11",tl:3},
 {id:"4xbA7Lui8ws",t:"زمن عجيب - محمد البصيلي",d:"2022-05-01"},
-{id:"UoLI2I730BM",t:"زلزال مع محمد البصيلي",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2022-03-28"},
+{id:"UoLI2I730BM",t:"زلزال مع محمد البصيلي",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2022-03-28",tl:2},
 {id:"-axsuFU9rzI",t:"زعامة - محمد البصيلي",ce:"Concept & arrangement | First Bedouin song on a mahraganat rhythm",ca:"فكرة وتوزيع | أول أغنية بدوية على إيقاع المهرجانات",d:"2022-01-24"},
-{id:"A5HOg1bcQjY",t:"مجرودة مربانا عز مع البصيلي",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2021-08-28"},
+{id:"A5HOg1bcQjY",t:"مجرودة مربانا عز مع البصيلي",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2021-08-28",tl:1},
 {id:"i1KLQaEm58w",t:"اخواتي مع عمر الكروان وسيف نور",ce:"Arrangement, recording, mix & master",ca:"توزيع وتسجيل وميكس وماستر",d:"2021-07-02"},
 {id:"3qnAy2bIU24",t:"دراويش يا عمري",ce:"Lyrics, melody, arrangement, mix & master",ca:"كلمات وألحان وتوزيع وميكس وماستر",d:"2017-12-14"},
 {id:"1XV_EwzQ6eg",t:"بلد المشاهير مع عمر الكروان وفرامل عندليب",ce:"Arrangement, mix & master",ca:"توزيع وميكس وماستر",d:"2016-07-12"},
@@ -136,7 +135,7 @@ var t=(s.channel_views_base||0)+(s.external_total||0);
 var f=t>=1e6?((t/1e6).toFixed(1).replace(/\.0$/,""))+"M+":t>=1e3?Math.round(t/1e3)+"K+":String(t);
 document.querySelectorAll(".ts-ytviews").forEach(function(b){b.textContent=f});
 }).catch(function(){});
-var wsorted=WORKS.slice().sort(function(a,b){var pa=a.pf||99,pb=b.pf||99;if(pa!==pb)return pa-pb;var ma=a.m?1:0,mb=b.m?1:0;if(ma!==mb)return mb-ma;var fa=a.mf?1:0,fb=b.mf?1:0;if(fa!==fb)return fa-fb;return a.d<b.d?1:-1});
+var wsorted=WORKS.slice().sort(function(a,b){var pa=a.pf||99,pb=b.pf||99;if(pa!==pb)return pa-pb;var ta=a.tl||0,tb=b.tl||0;if((ta>0)!==(tb>0))return ta>0?1:-1;if(ta!==tb)return ta-tb;var ma=a.m?1:0,mb=b.m?1:0;if(ma!==mb)return mb-ma;var fa=a.mf?1:0,fb=b.mf?1:0;if(fa!==fb)return fa-fb;return a.d<b.d?1:-1});
 [{G:"tsGridEn",R:"tsWorkRelEn",c:"ce"},{G:"tsGridAr",R:"tsWorkRelAr",c:"ca"}].forEach(function(cfg){var g=document.getElementById(cfg.G),l=document.getElementById(cfg.R);if(!g||!l)return;var gh="",lh="";wsorted.forEach(function(r,i){var cr=r[cfg.c]||null;if(i<5)gh+=cardHTML(r,r.t,cr);else lh+=rowHTML(r,r.t,cr)});g.innerHTML=gh;l.innerHTML=lh});
 var PIN=[{id:"sdjWUxFvA-Y",t:"مجرودة خاينين مع محمد البصيلي",d:""}];
 PIN.forEach(function(r){var a=document.getElementById("tsWorkRelEn");if(a)a.insertAdjacentHTML("beforeend",rowHTML(r,r.t,null));var b=document.getElementById("tsWorkRelAr");if(b)b.insertAdjacentHTML("beforeend",rowHTML(r,r.t,null));});
