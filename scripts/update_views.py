@@ -6,6 +6,11 @@ for w in works:
     for m in re.findall(r'youtu\.be/([\w-]{11})', w):
         if m not in ids:
             ids.append(m)
+m = re.search(r'var PIN=\[(.*?)\];', html, re.S)
+if m:
+    for x in re.findall(r'id:"([\w-]{11})"', m.group(1)):
+        if x not in ids:
+            ids.append(x)
 OWN = "UCoPRcf3z3_1qdQBdwgq9t1A"
 try:
     stats = json.load(open('stats.json', encoding='utf-8'))
